@@ -9,7 +9,7 @@ all other locations. The result can be used for example in path planning
  (by following the gradient). The algorithm is widely used e.g. in robotics.
  
  This repository contains a minimal, yet general, wavefront implementation, that is defined by
- four functions
+ four user-given functions
  * Neighborhood function (gives all neighbors of a node)
  * Cost function (pairwise distance between nodes)
  * Getter for node's current cost
@@ -18,4 +18,10 @@ all other locations. The result can be used for example in path planning
  
  ## Usage:
  
- See and run Demo application in test folder for example usage (image above). 
+ See and run Demo application in test folder for example usage (image above).
+ 
+ 
+ ## Other:
+ 
+ [YouTube video of an older version](https://www.youtube.com/watch?v=LWwL1jF0KTU) visualizing
+ how the wavefront can be used with a quadtree.
