@@ -38,17 +38,18 @@ class Wavefront[T](
   }
 
   def followGradient(point: T): Seq[T] = {
-    def nextNeighbor(point: T): Seq[T] = {
+    @tailrec
+    def nextNeighbor(point: T, acc: Seq[T]): Seq[T] = {
       val lesserNeighbors = neighbors(point).filter(n => getValue(n) < getValue(point))
       if(lesserNeighbors.isEmpty){
-        Seq.empty
+        acc
       } else{
         val minNeighbor = lesserNeighbors.minBy(n => getValue(n) + cost(point, n))
-        minNeighbor +: nextNeighbor(minNeighbor)
+        nextNeighbor(minNeighbor, minNeighbor +: acc)
       }
     }
 
-    point +: nextNeighbor(point)
+    nextNeighbor(point, Seq(point))
   }
 
 }
