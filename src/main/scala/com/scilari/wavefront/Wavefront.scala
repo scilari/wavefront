@@ -27,9 +27,9 @@ class Wavefront[T](
     def updateNeighbors(point: T): Seq[T] = {
       for{
         neighbor <- neighbors(point)
-        cst = getValue(point) + cost(point, neighbor) if cst < getValue(neighbor)
+        newValue = getValue(point) + cost(point, neighbor) if newValue < getValue(neighbor)
       } yield {
-        setValue(neighbor, cst)
+        setValue(neighbor, newValue)
         neighbor
       }
     }
