@@ -3,7 +3,7 @@ package com.scilari.wavefront
 import scala.annotation.tailrec
 
 /**
-  * Implements the wawefront algorithm to find the distances from known node(s) to other nodes.
+  * Implements the wavefront algorithm to find the distances from known node(s) to other nodes.
   *
   * @param neighbors Function to return node neighbors
   * @param cost Cost between two nodes
