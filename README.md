@@ -1,7 +1,7 @@
 # Minimal wavefront implementation
 
 <p>
-  <img align="right" src="images/spiral.png" width="350"/>
+  <img align="right" src="images/spiral.png" width="500"/>
 </p>
 
 Wavefront is a dynamic programming algorithm to find the distance from one location (node) to
