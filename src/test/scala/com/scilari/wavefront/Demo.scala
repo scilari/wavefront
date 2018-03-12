@@ -17,7 +17,7 @@ object Demo {
   def main(args: Array[String]): Unit ={
     val points = spiral(pointCount = 5000, width = 1000f).map{DataPoint(_, 0f)}
     val pathPanel = new PathPanel(1000, 1000, QuadTree(points))
-    new Panels.Frame("Wavefront Demo", pathPanel)
+    new Panels.Frame("Wavefront Demo - click to select goal", pathPanel)
   }
 
 
