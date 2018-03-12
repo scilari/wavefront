@@ -18,6 +18,10 @@ class Wavefront[T](
   setValue: (T, Float) => Unit
 ){
 
+  /**
+    * Updates the costs (distances) to all nodes.
+    * @param initialPoints The initial nodes that have a known costs (e.g. goal's cost = 0)
+    */
   def computeCosts(initialPoints: Seq[T]): Unit = {
     @tailrec
     def update(wavefront: Seq[T]): Unit = {
@@ -37,6 +41,11 @@ class Wavefront[T](
     update(initialPoints)
   }
 
+  /**
+    * Computes the shortest path to the node with minimal cost.
+    * @param point Path starting point.
+    * @return Path to the node with minimal cost.
+    */
   def followGradient(point: T): Seq[T] = {
     @tailrec
     def nextNeighbor(point: T, acc: Seq[T]): Seq[T] = {
