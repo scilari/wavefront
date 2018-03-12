@@ -54,7 +54,7 @@ class Wavefront[T](
         acc
       } else{
         val minNeighbor = lesserNeighbors.minBy(n => getValue(n) + cost(point, n))
-        nextNeighbor(minNeighbor, minNeighbor +: acc)
+        nextNeighbor(minNeighbor, acc :+ minNeighbor)
       }
     }
 
