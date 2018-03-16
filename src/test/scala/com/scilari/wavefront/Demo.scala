@@ -80,10 +80,10 @@ object Demo {
     val rounds = 3.0f
     val halfWidth = 0.5f*width
     val maxR = 0.8f*halfWidth
-    val angles = (0.0 until 2*math.Pi*rounds by 2*math.Pi*rounds/pointCount).toArray
+    val angles = (0 until pointCount).map(_.toDouble/pointCount*2*math.Pi*rounds).toArray
     val sines = angles.map(math.sin)
     val cosines = angles.map(math.cos)
-    val radii = (0f until maxR by maxR/pointCount).toArray
+    val radii = (0 until pointCount).map{_*maxR/pointCount}.toArray
     val points = (cosines, sines, radii).zipped map{(c, s, r) => new Float2(halfWidth + r*c, halfWidth + r*s)}
     points.map{p => p + Float2.random*0.12f*halfWidth}
   }
